@@ -66,28 +66,38 @@
                         <span class="font-della  pl-[33%]" style="font-size: 20px;">Aplikasi Pengarsipan Data</span>
                     </div>
                 </div>
-                <div class="bg-white mt-10 w-[400px] h-[320px] mx-[270px] rounded-[5px] shadow-md hover:shadow-lg">
-                    <div class="bg-zinc-600 flex flex-row h-[80px]">
-                        <div class="pl-5 pt-2 mt-2">
-                            <img src="{{ asset('asset/propil.png') }}" class="w-[40px] h-[40px]">
+
+                <form action="/admin/update-profil" method="POST">
+                    @csrf
+                    <div class="bg-white mt-10 w-[400px] h-[350px] mx-[270px] rounded-[5px] shadow-md hover:shadow-lg">
+                        <div class="bg-zinc-600 flex flex-row h-[80px]">
+                            <div class="pl-5 pt-2 mt-2">
+                                <img src="{{ asset('asset/propil.png') }}" class="w-[40px] h-[40px]">
+                            </div>
+                            <div class="mt-6 ml-3">
+                                <span class="font-della text-white">Profil Admin</span>
+                            </div>
                         </div>
-                        <div class="mt-6 ml-3">
-                            <span class="font-della text-white">Profil Admin</span>
+                        <div class="mx-[100px] mt-[40px] ">
+                            <input type="text" id="username" name="username" value="{{ $userCurrent->username }}"
+                                class="rounded-md shadow-md bg-slate-200 w-[200px] h-[35px]"
+                                style="border-radius: 5px;">
+                        </div>
+                        <div class="mx-[100px] mt-[25px] ">
+                            <input type="text" id="email" name="email" value="{{ $userCurrent->email }}"
+                                class="rounded-md shadow-md bg-slate-200 w-[200px] h-[35px]"
+                                style="border-radius: 5px;">
+                        </div>
+                        <div class="mx-[100px] mt-[25px] ">
+                            <input type="text" id="noHp" name="noHp" value="{{ $userCurrent->noHp }}"
+                                class="rounded-md shadow-md bg-slate-200 w-[200px] h-[35px]"
+                                style="border-radius: 5px;">
+                        </div>
+                        <div class="tombol flex justify-center mt-5">
+                            <button type="submit" class="bg-sky-500 text-white w-[50%] font-bold">Save</button>
                         </div>
                     </div>
-                    <div class="mx-[100px] mt-[40px] ">
-                        <input type="text" placeholder="Username" value="{{ $userCurrent->username }}"
-                            class="rounded-md shadow-md bg-slate-200 w-[200px] h-[35px]" style="border-radius: 5px;">
-                    </div>
-                    <div class="mx-[100px] mt-[25px] ">
-                        <input type="text" placeholder="Email" value="{{ $userCurrent->email }}"
-                            class="rounded-md shadow-md bg-slate-200 w-[200px] h-[35px]" style="border-radius: 5px;">
-                    </div>
-                    <div class="mx-[100px] mt-[25px] ">
-                        <input type="text" placeholder="No Handphone" value="{{ $userCurrent->noHp }}"
-                            class="rounded-md shadow-md bg-slate-200 w-[200px] h-[35px]" style="border-radius: 5px;">
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

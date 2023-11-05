@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function (){
     Route::prefix('admin')->group(function (){
         Route::get('/', [AdminController::class, 'dashboard']);
         Route::get('/profil', [AdminController::class, 'profile']);
+        Route::post('/update-profil', [AdminController::class, 'updateProfile']);
     });
 });
 
