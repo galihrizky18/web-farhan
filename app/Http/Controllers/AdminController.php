@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AbsensiKaryawan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,8 +12,9 @@ class AdminController extends Controller
     public function dashboard(){
         
         $userCurrent = Auth::user();
+        $dataAbsen = AbsensiKaryawan::all();
 
-        return view('dashboard', compact('userCurrent'));
+        return view('dashboard', compact('userCurrent', 'dataAbsen'));
     }
 
     public function profile(){
