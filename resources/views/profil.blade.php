@@ -85,12 +85,14 @@
                                 style="border-radius: 5px;">
                         </div>
                         <div class="mx-[100px] mt-[25px] ">
-                            <input type="text" id="email" name="email" value="{{ $userCurrent->email }}"
+                            <input type="text" id="email" name="email"
+                                value="{{ $userCurrent->karyawan->email }}"
                                 class="rounded-md shadow-md bg-slate-200 w-[200px] h-[35px]"
                                 style="border-radius: 5px;">
                         </div>
                         <div class="mx-[100px] mt-[25px] ">
-                            <input type="text" id="noHp" name="noHp" value="{{ $userCurrent->noHp }}"
+                            <input type="text" id="noHp" name="noHp"
+                                value="{{ $userCurrent->karyawan->no_hp }}"
                                 class="rounded-md shadow-md bg-slate-200 w-[200px] h-[35px]"
                                 style="border-radius: 5px;">
                         </div>

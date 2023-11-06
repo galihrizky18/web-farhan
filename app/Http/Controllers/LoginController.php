@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Karyawan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,12 +42,20 @@ class LoginController extends Controller
             'email.email' => 'Email Harus Berformat Email',
         ]);
 
+        $countKaryawan = Karyawan::all()->count();
+        $idKaryawan = $validate['username'].$countKaryawan;
+
         $user = new User();
+        $user->id_karyawan = $idKaryawan;
         $user->username = $validate['username'];
-        $user->email = $validate['email'];
-        $user->noHp = $validate['noHp'];
         $user->password =bcrypt($validate['password']);
         $user->save();
+
+        $karyawan = new Karyawan();
+        $karyawan->id_karyawan = $idKaryawan;
+        $karyawan->nama_karyawan = $validate['username'];
+        $karyawan->no_hp = $validate['noHp'];
+        $karyawan->email = $validate['email'];
 
         return redirect('/')->with('successCreateData', 'Berhasil menambah Data');
 
