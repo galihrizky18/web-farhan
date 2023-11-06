@@ -24,7 +24,8 @@
                     </div>
                 </div>
                 <div class="border-white border-t border-b text-white w-[195px] mx-5 mt-8">
-                    <span class="mx-[75px] font-della text-2xl">{{ $userCurrent->username }}</span>
+                    <span
+                        class="flex justify-center font-della text-2xl ">{{ $userCurrent->karyawan->nama_karyawan }}</span>
                 </div>
                 <div class="flex flex-col bg-indigo-500  w-[130px] h-[35px] mx-4 rounded-[10px] mt-10">
                     <a href="/admin/profil">
@@ -139,7 +140,9 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script>
-        new DataTable('#example');
+        new DataTable('#example', {
+            responsive: true
+        });
     </script>
 </body>
 
