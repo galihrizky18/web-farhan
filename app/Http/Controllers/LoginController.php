@@ -56,6 +56,7 @@ class LoginController extends Controller
         $karyawan->nama_karyawan = $validate['username'];
         $karyawan->no_hp = $validate['noHp'];
         $karyawan->email = $validate['email'];
+        $karyawan->save();
 
         return redirect('/')->with('successCreateData', 'Berhasil menambah Data');
 
